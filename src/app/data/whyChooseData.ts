@@ -1,0 +1,41 @@
+export const whyChooseTabs = [
+  {
+    id: "product-seo",
+    tabId: "product-seo-tab",
+    title: "1. Why Need Product Seo?",
+    heading: "Why can't you sell the product?",
+    points: ["NO MARKETING PLAN", "NO STRATEGY", "NO CUSTOMERS TARGET ONLY"],
+    description: [
+      "With the rapid development of e-commerce plus the huge benefits from it, everyone wants to have a sales channel on it.",
+      "With us, you will be able to set up a business system from A-Z to bring maximum profit from the Internet.",
+    ],
+    image: "/assets/images/wcu_tab1.png",
+  },
+  {
+    id: "choose-us",
+    tabId: "choose-us-tab",
+    title: "2. Why Choose Us?",
+    heading: "Why Choose Us?",
+    points: ["EXPERT TEAM", "RESULT ORIENTED", "CUSTOM STRATEGY"],
+    description: ["We provide the right strategy and execution support for your business growth."],
+    image: "/assets/images/wcu_tab1.png",
+  },
+  {
+    id: "work",
+    tabId: "work-tab",
+    title: "3. How It Work?",
+    heading: "How It Work?",
+    points: ["ANALYZE", "PLAN", "EXECUTE"],
+    description: ["We analyze your business, create a plan, and execute it step by step."],
+    image: "/assets/images/wcu_tab1.png",
+  },
+  {
+    id: "commitment",
+    tabId: "commitment-tab",
+    title: "4. Our Commitment",
+    heading: "Our Commitment",
+    points: ["QUALITY WORK", "ON TIME DELIVERY", "LONG TERM SUPPORT"],
+    description: ["We are committed to delivering quality work and long-term support."],
+    image: "/assets/images/wcu_tab1.png",
+  },
+];
