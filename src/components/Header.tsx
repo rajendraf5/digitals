@@ -7,6 +7,24 @@ export default function Header() {
   const pathname = usePathname();
   const router = useRouter();
   const [isSticky, setIsSticky] = useState(false);
+  const closeMobileMenu = () => {
+    if (typeof window !== "undefined" && window.innerWidth < 992) {
+      const navbar = document.getElementById("navbarCollapse");
+      navbar?.classList.remove("show");
+
+      document
+        .querySelectorAll("#navbarCollapse .dropdown.show, #navbarCollapse .dropdown-menu.show")
+        .forEach((el) => el.classList.remove("show"));
+
+      const toggler = document.querySelector(
+        '.navbar-toggler[aria-controls="navbarCollapse"]'
+      ) as HTMLButtonElement | null;
+
+      if (toggler) {
+        toggler.setAttribute("aria-expanded", "false");
+      }
+    }
+  };
   const isActive = (path: string) => pathname === path;
   useEffect(() => {
     const handleScroll = () => {
@@ -23,29 +41,29 @@ export default function Header() {
     <header className={`header-transparent headerfixed ${isSticky ? "is-sticky" : ""}`}>
       <div className="container d-flex align-items-center justify-content-between">
         <nav className="navbar navbar-expand-lg navbar-dark w-100">
-          <Link className="navbar-brand logo" href="/"><img loading="lazy" src="/assets/images/logo.png" alt="Logo" /></Link>
+          <Link onClick={closeMobileMenu} className="navbar-brand logo" href="/"><img loading="lazy" src="/assets/images/logo.png" alt="Logo" /></Link>
           <button className="navbar-toggler first-button border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <div className="animated-icon1"><span></span><span></span><span></span></div>
           </button>
           <div className="collapse navbar-collapse" id="navbarCollapse">
             <ul className="navbar-nav mx-lg-auto navmenu">
               <li className="nav-item">
-                <Link className={`nav-link ${isActive("/") ? "active" : ""}`} href="/">Home</Link>
+                <Link onClick={closeMobileMenu} className={`nav-link ${isActive("/") ? "active" : ""}`} href="/">Home</Link>
               </li>
               <li className="nav-item">
-                <Link className={`nav-link ${isActive("/about") ? "active" : ""}`} href="/about">About Us</Link>
+                <Link onClick={closeMobileMenu} className={`nav-link ${isActive("/about") ? "active" : ""}`} href="/about">About Us</Link>
               </li>
               <li className="nav-item">
-                <Link className={`nav-link ${isActive("/services") ? "active" : ""}`} href="/services">Services</Link>
+                <Link onClick={closeMobileMenu} className={`nav-link ${isActive("/services") ? "active" : ""}`} href="/services">Services</Link>
               </li>
               <li className="nav-item">
-                <Link className={`nav-link ${isActive("/portfolio") ? "active" : ""}`} href="/portfolio">Portfolio</Link>
+                <Link onClick={closeMobileMenu} className={`nav-link ${isActive("/portfolio") ? "active" : ""}`} href="/portfolio">Portfolio</Link>
               </li>
               <li className="nav-item">
-                <Link className={`nav-link ${isActive("/blog") ? "active" : ""}`} href="/blog">Blog</Link>
+                <Link onClick={closeMobileMenu} className={`nav-link ${isActive("/blog") ? "active" : ""}`} href="/blog">Blog</Link>
               </li>
               <li className="nav-item">
-                <Link className={`nav-link ${isActive("/contact") ? "active" : ""}`} href="/contact">Contact</Link>
+                <Link onClick={closeMobileMenu} className={`nav-link ${isActive("/contact") ? "active" : ""}`} href="/contact">Contact</Link>
               </li>
               {/* <li> <GtranslateWidget /> </li> */}
             </ul>
