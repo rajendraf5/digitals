@@ -135,7 +135,7 @@ export default async function ServiceDetailPage({
       </section>
 
       {service.problemSections && (
-        <section className="pt-5 pb-5">
+        <section className="pt-1 pt-lg-5 pb-5">
           <div className="container">
             <h2 className="fw-bold mb-0">{service.sectionTitle}</h2>
             <p>{service.sectionSubtitle}</p>
